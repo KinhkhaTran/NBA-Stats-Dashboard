@@ -1,3 +1,23 @@
+"""
+process_data.py
+---------------
+Cleans the raw game-log CSV and produces per-player season averages
+(PTS, REB, AST) for quick exploratory work and visualization.
+
+Author  : Kinhkha Tran
+Created : 2025-05-01
+Project : NBA 2024-25 Stats Dashboard
+Usage   : python process_data.py
+Input   : data/raw/player_game_logs.csv
+Output  : data/processed/player_avg_stats.csv
+
+Notes
+-----
+• Converts GAME_DATE to pandas datetime then selects core box-score stats. :contentReference[oaicite:2]{index=2}&#8203;:contentReference[oaicite:3]{index=3}
+• Groups by player and sorts by average points scored.
+• Creates `data/processed/` if it doesn’t exist.
+"""
+
 # Import pandas for data manipulation and os for file/directory operations
 import pandas as pd
 import os

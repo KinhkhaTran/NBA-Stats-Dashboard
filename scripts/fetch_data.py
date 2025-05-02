@@ -1,3 +1,23 @@
+"""
+fetch_data.py
+-------------
+Fetches regular-season game logs for the top *n* active NBA players and
+saves them as a CSV for downstream analysis.
+
+Author  : Kinhkha Tran
+Created : 2025-05-01
+Project : NBA 2024-25 Stats Dashboard
+Usage   : python fetch_data.py --limit 30 --season 2024-25
+Output  : data/raw/player_game_logs.csv
+
+Notes
+-----
+• Relies on `nba_api` for data retrieval.      :contentReference[oaicite:0]{index=0}&#8203;:contentReference[oaicite:1]{index=1}
+• Sleeps 1 s between API calls to respect rate limits.
+• Adjust `limit` or `season` via CLI or when calling `fetch_top_player_logs`.
+• Designed to be run as a standalone ETL (extract-transform-load) step.
+"""
+
 # Import functions to get player info and game logs from nba_api
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import playergamelog
